@@ -1,6 +1,7 @@
 "use client";
 import ScrollToTop from "@/components/common/ScrollTop";
 import Aos from "aos";
+import "bootstrap/dist/css/bootstrap.min.css";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
