@@ -310,7 +310,7 @@ li {
     height: 70px;
     padding-left: 30px;
 }
-.mailchimp-style1 .form-control:placeholder {
+.mailchimp-style1 .form-control::placeholder {
     color: #ffffff;
     font-size: 14px;
     font-weight: 400;
@@ -335,7 +335,7 @@ li {
 .mailchimp-style1.white-version .form-control {
     background-color: #ffffff;
 }
-.mailchimp-style1.white-version .form-control:placeholder {
+.mailchimp-style1.white-version .form-control::placeholder {
     color: var(--headings-color);
     font-size: 14px;
     font-weight: 400;
@@ -403,7 +403,7 @@ li {
     height: 70px;
     padding-left: 30px;
 }
-.mailchimp-style2 .form-control:placeholder {
+.mailchimp-style2 .form-control::placeholder {
     color: var(--headings-color);
     font-size: 14px;
     font-weight: 400;
@@ -3373,7 +3373,7 @@ li {
     border: none;
     color: var(--headings-color);
 }
-.advance-content-style2 .bootselect-multiselect .btn::placehoder {
+.advance-content-style2 .bootselect-multiselect .btn::placeholder {
     color: var(--headings-color);
 }
 .advance-content-style2 .bootselect-multiselect .dropdown-menu {
@@ -5656,7 +5656,7 @@ section {
     outline: none;
     padding-left: 15px;
 }
-.form-style2 .form-control:placeholder {
+.form-style2 .form-control::placeholder {
     color: #717171;
     font-family: var(--title-font-family);
 }
@@ -5695,7 +5695,7 @@ textarea:focus {
     outline: none;
     padding-left: 15px;
 }
-.form-control:placeholder {
+.form-control::placeholder {
     color: #717171;
     font-family: var(--title-font-family);
 }
@@ -8378,7 +8378,7 @@ input.amount4 {
         max-width: 100px;
     }
 }
-input:placeholder {
+input::placeholder {
     color: #717171;
 }
 input:focus-visible {
