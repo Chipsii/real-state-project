@@ -17,7 +17,7 @@ import Link from "next/link";
 import PopulerProperty from "@/components/home/home-v1/PopulerProperty";
 
 export const metadata = {
-  title: "Home v1 || Homez - Real Estate NextJS Template",
+  title: "Bankers' Housing Construction",
 };
 
 const Home_V1 = () => {

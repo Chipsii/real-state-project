@@ -34,10 +34,10 @@ const Header = () => {
       >
         <nav className="posr">
           <div className="container posr menu_bdrt1">
-            <div className="row align-items-center justify-content-between">
+            <div className="row align-items-center justify-content-center">
               <div className="col-auto">
-                <div className="d-flex align-items-center justify-content-between">
-                  <div className="logos mr40">
+                <div className="d-flex align-items-center justify-content-center">
+                  {/* <div className="logos mr40">
                     <Link className="header-logo logo1" href="/">
                       <Image
                         width={138}
@@ -54,7 +54,7 @@ const Header = () => {
                         alt="Header Logo"
                       />
                     </Link>
-                  </div>
+                  </div> */}
                   {/* End Logo */}
 
                   <MainMenu />
@@ -65,7 +65,7 @@ const Header = () => {
 
               <div className="col-auto">
                 <div className="d-flex align-items-center">
-                  <a
+                  {/* <a
                     href="#"
                     className="login-info d-flex align-items-center"
                     data-bs-toggle="modal"
@@ -74,14 +74,14 @@ const Header = () => {
                   >
                     <i className="far fa-user-circle fz16 me-2" />{" "}
                     <span className="d-none d-xl-block">Login / Register</span>
-                  </a>
-                  <Link
+                  </a> */}
+                  {/* <Link
                     className="ud-btn add-property menu-btn bdrs60 mx-2 mx-xl-4"
                     href="/dashboard-add-property"
                   >
                     Add Property
                     <i className="fal fa-arrow-right-long" />
-                  </Link>
+                  </Link> */}
                   <a
                     className="sidemenu-btn filter-btn-right"
                     href="#"
@@ -89,13 +89,13 @@ const Header = () => {
                     data-bs-target="#SidebarPanel"
                     aria-controls="SidebarPanelLabel"
                   >
-                    <Image
+                    {/* <Image
                       width={25}
                       height={9}
                       className="img-1"
                       src="/images/icon/nav-icon-white.svg"
                       alt="humberger menu"
-                    />
+                    /> */}
 
                     <Image
                       width={25}
@@ -116,7 +116,7 @@ const Header = () => {
       {/* End Header */}
 
       {/* Signup Modal */}
-      <div className="signup-modal">
+      {/* <div className="signup-modal">
         <div
           className="modal fade"
           id="loginSignupModal"
@@ -128,18 +128,18 @@ const Header = () => {
             <LoginSignupModal />
           </div>
         </div>
-      </div>
+      </div> */}
       {/* End Signup Modal */}
 
       {/* DesktopSidebarMenu */}
-      <div
+      {/* <div
         className="offcanvas offcanvas-end"
         tabIndex="-1"
         id="SidebarPanel"
         aria-labelledby="SidebarPanelLabel"
       >
         <SidebarPanel />
-      </div>
+      </div> */}
       {/* Sidebar Panel End */}
     </>
   );
