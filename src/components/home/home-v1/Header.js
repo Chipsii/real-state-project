@@ -75,13 +75,14 @@ const Header = () => {
                     <i className="far fa-user-circle fz16 me-2" />{" "}
                     <span className="d-none d-xl-block">Login / Register</span>
                   </a> */}
-                  {/* <Link
-                    className="ud-btn add-property menu-btn bdrs60 mx-2 mx-xl-4"
-                    href="/dashboard-add-property"
+                  <a
+                    className="ud-btn add-property menu-btn bdrs60"
+                    href="tel:+8801313714079"
+                    aria-label="Call +880 13137 14079"
                   >
-                    Add Property
+                    +880 13137 14079
                     <i className="fal fa-arrow-right-long" />
-                  </Link> */}
+                  </a>
                   <a
                     className="sidemenu-btn filter-btn-right"
                     href="#"

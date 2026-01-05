@@ -6,10 +6,10 @@ import React from "react";
 import PropertyFiltering from "@/components/listing/grid-view/grid-default/PropertyFiltering";
 
 export const metadata = {
-  title: "Gird Default || Homez - Real Estate NextJS Template",
+  title: "Bankers' Home Solution",
 };
 
-const GridDefault = () => {
+const BankersHomeSolution = () => {
   return (
     <>
       {/* Main Header Nav */}
@@ -26,10 +26,10 @@ const GridDefault = () => {
           <div className="row">
             <div className="col-lg-12">
               <div className="breadcumb-style1">
-                <h2 className="title">New York Homes for Sale</h2>
+                <h2 className="title">Bankers' Home Solution</h2>
                 <div className="breadcumb-list">
                   <a href="#">Home</a>
-                  <a href="#">For Rent</a>
+                  <a href="#">Bankers' Home Solution</a>
                 </div>
                 <a
                   className="filter-btn-left mobile-filter-btn d-block d-lg-none"
@@ -48,7 +48,7 @@ const GridDefault = () => {
       {/* End Breadcumb Sections */}
 
       {/* Property Filtering */}
-      <PropertyFiltering/>
+      <PropertyFiltering />
       {/* Property Filtering */}
 
       {/* Start Our Footer */}
@@ -60,4 +60,4 @@ const GridDefault = () => {
   );
 };
 
-export default GridDefault;
+export default BankersHomeSolution;
