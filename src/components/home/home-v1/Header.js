@@ -2,7 +2,6 @@
 
 import MainMenu from "@/components/common/MainMenu";
 import SidebarPanel from "@/components/common/sidebar-panel";
-import LoginSignupModal from "@/components/common/login-signup-modal";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
@@ -98,13 +97,13 @@ const Header = () => {
                       alt="humberger menu"
                     /> */}
 
-                    <Image
+                    {/* <Image
                       width={25}
                       height={9}
                       className="img-2"
                       src="/images/icon/nav-icon-dark.svg"
                       alt="humberger menu"
-                    />
+                    /> */}
                   </a>
                 </div>
               </div>
@@ -133,14 +132,14 @@ const Header = () => {
       {/* End Signup Modal */}
 
       {/* DesktopSidebarMenu */}
-      {/* <div
+      <div
         className="offcanvas offcanvas-end"
         tabIndex="-1"
         id="SidebarPanel"
         aria-labelledby="SidebarPanelLabel"
       >
         <SidebarPanel />
-      </div> */}
+      </div>
       {/* Sidebar Panel End */}
     </>
   );

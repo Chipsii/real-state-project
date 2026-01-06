@@ -57,6 +57,34 @@ const Home_V1 = () => {
       </section>
       {/* End Home Banner Style V1 */}
 
+      {/* About Area */}
+      <section className="our-about pb90">
+        <div className="container">
+          <div className="row" data-aos="fade-up" data-aos-delay="300">
+            <div className="col-lg-6">
+              <h2>
+                About us{" "}
+                <br className="d-none d-lg-block" /> Transforming the Way You Live.
+              </h2>
+            </div>
+            <div className="col-lg-6">
+              <p className="text mb25">
+                It doesn’t matter how organized you are — a surplus of toys will
+                always ensure your house is a mess waiting to happen.
+                Fortunately, getting kids on board with the idea of ditching
+                their stuff is a lot easier than it sounds.
+              </p>
+              <p className="text mb55">
+                Maecenas quis viverra metus, et efficitur ligula. Nam congue
+                augue et ex congue, sed luctus lectus congue. Integer convallis
+                condimentum sem. Duis elementum tortor eget condimentum tempor.
+                Praesent sollicitudin lectus ut pharetra pulvinar.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Explore Apartment */}
       <section id="explore-property" className="pb90 pb30-md">
         <div className="container">
@@ -121,7 +149,7 @@ const Home_V1 = () => {
       {/* End Explore Apartment */}
 
       {/* Explore Apartment */}
-      <section className="pt0 pb90 pb10-md">
+      {/* <section className="pt0 pb90 pb10-md">
         <div className="container">
           <div className="row">
             <div
@@ -136,18 +164,18 @@ const Home_V1 = () => {
                 </p>
               </div>
             </div>
-          </div>
+          </div> */}
           {/* End .row */}
 
-          <div className="row">
+          {/* <div className="row">
             <Explore />
           </div>
         </div>
-      </section>
+      </section> */}
       {/* End Explore Apartment */}
 
       {/* Featured Listings */}
-      <section className="bgc-f7">
+      {/* <section className="bgc-f7">
         <div className="container">
           <div className="row align-items-center" data-aos="fade-up">
             <div className="col-lg-9">
@@ -166,10 +194,10 @@ const Home_V1 = () => {
                 </Link>
               </div>
             </div>
-          </div>
+          </div> */}
           {/* End header */}
 
-          <div className="row">
+          {/* <div className="row">
             <div className="col-lg-12" data-aos="fade-up" data-aos-delay="200">
               <div className="feature-listing-slider">
                 <FeaturedListings />
@@ -177,11 +205,11 @@ const Home_V1 = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       {/* End Featured Listings */}
 
       {/* Explore property-city */}
-      <section className="pb40-md pb90">
+      {/* <section className="pb40-md pb90">
         <div className="container">
           <div
             className="row align-items-center"
@@ -195,47 +223,47 @@ const Home_V1 = () => {
                   Aliquam lacinia diam quis lacus euismod
                 </p>
               </div>
-            </div>
+            </div> */}
             {/* End col-lg-9 */}
 
-            <div className="col-lg-3">
+            {/* <div className="col-lg-3">
               <div className="text-start text-lg-end mb-3">
                 <a className="ud-btn2" href="#">
                   See All Cities
                   <i className="fal fa-arrow-right-long" />
                 </a>
               </div>
-            </div>
+            </div> */}
             {/* End col-lg-3 */}
-          </div>
+          {/* </div> */}
           {/* End .row */}
 
-          <div className="row">
+          {/* <div className="row">
             <div className="col-lg-12" data-aos="fade-up" data-aos-delay="300">
               <div className="property-city-slider position-relative">
                 <PropertiesByCities />
               </div>
             </div>
-          </div>
+          </div> */}
           {/* End .row */}
-        </div>
-      </section>
+        {/* </div>
+      </section> */}
       {/* End Explore property-city */}
 
       {/* <!-- About Us --> */}
-      <section className="pt0 pb40-md">
+      {/* <section className="pt0 pb40-md">
         <div className="container">
           <About />
         </div>
-      </section>
+      </section> */}
       {/*  <!-- End About Us --> */}
 
       {/* Popular Property */}
-      <PopulerProperty />
+      {/* <PopulerProperty /> */}
       {/* End  Popular Property */}
 
       {/* Our Testimonials */}
-      <section className="pb100 pb50-md bgc-thm-light">
+      {/* <section className="pb100 pb50-md bgc-thm-light">
         <div className="container">
           <div className="row  justify-content-between align-items-center">
             <div className="col-auto">
@@ -249,36 +277,36 @@ const Home_V1 = () => {
                   Aliquam lacinia diam quis lacus euismod
                 </p>
               </div>
-            </div>
+            </div> */}
             {/* End header */}
 
-            <div className="col-auto mb30">
+            {/* <div className="col-auto mb30">
               <div className="row align-items-center justify-content-center">
                 <div className="col-auto">
                   <button className="testimonila_prev__active swiper_button">
                     <i className="far fa-arrow-left-long" />
                   </button>
-                </div>
+                </div> */}
                 {/* End prev */}
 
-                <div className="col-auto">
+                {/* <div className="col-auto">
                   <div className="pagination swiper--pagination testimonila_pagination__active" />
-                </div>
+                </div> */}
                 {/* End pagination */}
 
-                <div className="col-auto">
+                {/* <div className="col-auto">
                   <button className="testimonila_next__active swiper_button">
                     <i className="far fa-arrow-right-long" />
                   </button>
-                </div>
+                </div> */}
                 {/* End Next */}
-              </div>
-            </div>
+              {/* </div>
+            </div> */}
             {/* End .col for navigation and pagination */}
-          </div>
+          {/* </div> */}
           {/* End .row */}
 
-          <div className="row">
+          {/* <div className="row">
             <div className="col-lg-12">
               <div
                 className="testimonial-slider"
@@ -290,11 +318,11 @@ const Home_V1 = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       {/* End Our Testimonials */}
 
       {/* Explore Blog */}
-      <section className="pb90 pb20-md">
+      {/* <section className="pb90 pb20-md">
         <div className="container">
           <div className="row">
             <div className="col-lg-6 m-auto" data-aos="fade-up">
@@ -305,19 +333,19 @@ const Home_V1 = () => {
                 </p>
               </div>
             </div>
-          </div>
+          </div> */}
           {/* End .row */}
 
-          <div className="row" data-aos="fade-up" data-aos-delay="300">
+          {/* <div className="row" data-aos="fade-up" data-aos-delay="300">
             <Blog />
-          </div>
+          </div> */}
           {/* End .row */}
-        </div>
-      </section>
+        {/* </div>
+      </section> */}
       {/* Explore Blog */}
 
       {/* Our Partners */}
-      <section className="our-partners pt0">
+      {/* <section className="our-partners pt0">
         <div className="container">
           <div className="row">
             <div className="col-lg-12" data-aos="fade-up">
@@ -336,7 +364,7 @@ const Home_V1 = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       {/* End Our Partners */}
 
       {/* Our CTA */}

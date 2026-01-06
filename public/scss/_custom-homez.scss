@@ -115,6 +115,18 @@ html {
 
 // mobile menu
 .mobilie_header_nav {
+    .mobile_menu_bar {
+        justify-content: center;
+        position: relative;
+    }
+
+    .mobile_menu_bar .mobile_logo {
+        left: 50%;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
     .hsidebar-header {
         background: rgba(235, 103, 83, 0.07);
         .sidebar-close-icon {
@@ -270,18 +282,25 @@ header.nav-homepage-style.sticky.at-home3 .sidemenu-btn .img-1 {
 // light header
 .nav-homepage-style.light-header {
     position: static;
-    background-color: #fff;
+    background-color: #001937;
     -webkit-box-shadow: 0px 1px 4px rgba(24, 26, 32, 0.07);
     box-shadow: 0px 1px 4px rgba(24, 26, 32, 0.07);
     &.sticky {
         position: fixed;
+        background-color: #001937;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.07);
     }
     .login-info {
-        color: var(--headings-color);
+        color: #ffffff;
     }
 }
 
 header.nav-homepage-style.light-header .ace-responsive-menu a {
+    color: #ffffff;
+}
+
+// Ensure dropdown/submenu items keep default (dark) text color
+header.nav-homepage-style.light-header .ace-responsive-menu .sub-menu a {
     color: var(--headings-color);
 }
 
