@@ -6,24 +6,24 @@ const Explore = () => {
   const iconboxData = [
     {
       id: 1,
-      icon: "/images/icon/property-buy.svg",
+      icon: "/images/icon/property-buy-2.svg",
       title: "Buy a property",
-      text: "Nullam sollicitudin blandit eros eu pretium. Nullam maximus ultricies auctor.",
+      text: "Bashundhara R/A",
       linkText: "Find a home",
     },
     {
       id: 2,
-      icon: "/images/icon/property-sell.svg",
-      title: "Sell a property",
-      text: "Nullam sollicitudin blandit eros eu pretium. Nullam maximus ultricies auctor.",
-      linkText: "Place an ad",
+      icon: "/images/icon/property-sell-2.svg",
+      title: "Buy a property",
+      text: "Jolshibari Abashon",
+      linkText: "Find a home",
     },
     {
       id: 3,
-      icon: "/images/icon/property-rent.svg",
-      title: "Rent a property",
-      text: "Nullam sollicitudin blandit eros eu pretium. Nullam maximus ultricies auctor.",
-      linkText: "Find a rental",
+      icon: "/images/icon/property-rent-2.svg",
+      title: "Buy a property",
+      text: "Purbachal American City",
+      linkText: "Find a home",
     },
   ];
 

@@ -17,14 +17,20 @@ const Footer = () => {
               <Link className="footer-logo" href="/">
                 <Image
                   width={138}
-                  height={44}
+                  height={138}
                   className="mb40"
-                  src="/images/header-logo.svg"
+                  src="/images/home/home-logo.png"
                   alt=""
                 />
               </Link>
               <ContactMeta />
-              <AppWidget />
+              <p className="text-white-50 mt-3 mb-4">
+                Fortress Group: A trusted leader in Bangladeshi real estate,
+                completing 50+ residential & commercial projects in prime
+                locations, ensuring customer satisfaction. Over 700 clients rely
+                on our high-quality construction and dependable services.
+              </p>
+              {/* <AppWidget /> */}
               <div className="social-widget">
                 <h6 className="text-white mb20">Follow us on social media</h6>
                 <Social />

@@ -61,32 +61,74 @@ const Home_V1 = () => {
       <section className="our-about pb90">
         <div className="container">
           <div className="row" data-aos="fade-up" data-aos-delay="300">
-            <div className="col-lg-6">
+            <div className="col-lg-12">
               <h2>
-                About us{" "}
-                <br className="d-none d-lg-block" /> Transforming the Way You Live.
+                About us <br className="d-none d-lg-block" /> Transforming the
+                Way You Live.
               </h2>
+            </div>
+          </div>
+
+          <div className="row mt40" data-aos="fade-up" data-aos-delay="300">
+            <div className="col-lg-6">
+              <div>
+                <Image
+                  width={518}
+                  height={601}
+                  className="w-100 h-100 cover"
+                  src="/images/home/owner-pic.png"
+                  alt="About Twilight Builders"
+                />
+              </div>
             </div>
             <div className="col-lg-6">
               <p className="text mb25">
-                It doesn’t matter how organized you are — a surplus of toys will
-                always ensure your house is a mess waiting to happen.
-                Fortunately, getting kids on board with the idea of ditching
-                their stuff is a lot easier than it sounds.
+                At Twilight Builders Ltd., we believe that every project is more
+                than just bricks and mortar—it’s about building dreams, trust,
+                and lasting value. Since our inception in 2022, under the
+                visionary leadership of our founder MD Nurnnabi Miah, we have
+                been working with passion and dedication to transform ideas into
+                reality. Our mission has always been to create modern,
+                sustainable, and innovative living and working spaces that stand
+                the test of time.
               </p>
               <p className="text mb55">
-                Maecenas quis viverra metus, et efficitur ligula. Nam congue
-                augue et ex congue, sed luctus lectus congue. Integer convallis
-                condimentum sem. Duis elementum tortor eget condimentum tempor.
-                Praesent sollicitudin lectus ut pharetra pulvinar.
+                Our projects range across residential, commercial, and community
+                developments. We focus on creating safe, stylish homes, modern
+                commercial spaces, and sustainable environments that not only
+                meet today’s needs but also inspire tomorrow’s growth.
               </p>
+              <div className="text mb55">
+                <h5>At the heart of our work are the values that define us:</h5>
+                <ul className="mb0 ps-3 about-values-list">
+                  <li>
+                    Excellence: Every project is crafted with world-class
+                    quality and attention to detail.
+                  </li>
+                  <li>
+                    Trust &amp; Transparency: We believe in honesty and building
+                    long-term relationships.
+                  </li>
+                  <li>
+                    Innovation: We combine creativity and technology to create
+                    future-ready solutions.
+                  </li>
+                </ul>
+              </div>
+              {/* icon here */}
+              <div className="about-values-social d-flex align-items-center mt-3">
+                <span className="fab fa-facebook-f about-social-icon" aria-label="Facebook" />
+                <span className="fab fa-twitter about-social-icon" aria-label="Twitter" />
+                <span className="fab fa-linkedin-in about-social-icon" aria-label="LinkedIn" />
+              </div>
+              
             </div>
           </div>
         </div>
       </section>
 
       {/* Explore Apartment */}
-      <section id="explore-property" className="pb90 pb30-md">
+      {/* <section id="explore-property" className="pb90 pb30-md">
         <div className="container">
           <div className="row  justify-content-between align-items-center">
             <div className="col-auto">
@@ -100,36 +142,36 @@ const Home_V1 = () => {
                   Get some Inspirations from 1800+ skills
                 </p>
               </div>
-            </div>
+            </div> */}
             {/* End header */}
 
-            <div className="col-auto mb30">
+            {/* <div className="col-auto mb30">
               <div className="row align-items-center justify-content-center">
                 <div className="col-auto">
                   <button className="prev__active swiper_button">
                     <i className="far fa-arrow-left-long" />
                   </button>
-                </div>
+                </div> */}
                 {/* End prev */}
 
-                <div className="col-auto">
+                {/* <div className="col-auto">
                   <div className="pagination swiper--pagination pagination__active" />
-                </div>
+                </div> */}
                 {/* End pagination */}
 
-                <div className="col-auto">
+                {/* <div className="col-auto">
                   <button className="next__active swiper_button">
                     <i className="far fa-arrow-right-long" />
                   </button>
-                </div>
+                </div> */}
                 {/* End Next */}
-              </div>
-            </div>
+              {/* </div>
+            </div> */}
             {/* End .col for navigation and pagination */}
-          </div>
+          {/* </div> */}
           {/* End .row */}
 
-          <div className="row">
+          {/* <div className="row">
             <div className="col-lg-12">
               <div
                 className="explore-apartment-slider"
@@ -145,37 +187,13 @@ const Home_V1 = () => {
             </div>
           </div>
         </div>
-      </section>
-      {/* End Explore Apartment */}
-
-      {/* Explore Apartment */}
-      {/* <section className="pt0 pb90 pb10-md">
-        <div className="container">
-          <div className="row">
-            <div
-              className="col-lg-6 m-auto"
-              data-aos="fade-up"
-              data-aos-delay="300"
-            >
-              <div className="main-title text-center">
-                <h2 className="title">See How Realton Can Help</h2>
-                <p className="paragraph">
-                  Aliquam lacinia diam quis lacus euismod
-                </p>
-              </div>
-            </div>
-          </div> */}
-          {/* End .row */}
-
-          {/* <div className="row">
-            <Explore />
-          </div>
-        </div>
       </section> */}
       {/* End Explore Apartment */}
 
+      
+
       {/* Featured Listings */}
-      {/* <section className="bgc-f7">
+      <section className="bgc-f8">
         <div className="container">
           <div className="row align-items-center" data-aos="fade-up">
             <div className="col-lg-9">
@@ -194,10 +212,10 @@ const Home_V1 = () => {
                 </Link>
               </div>
             </div>
-          </div> */}
-          {/* End header */}
+          </div>
+      {/* End header */}
 
-          {/* <div className="row">
+      <div className="row">
             <div className="col-lg-12" data-aos="fade-up" data-aos-delay="200">
               <div className="feature-listing-slider">
                 <FeaturedListings />
@@ -205,7 +223,7 @@ const Home_V1 = () => {
             </div>
           </div>
         </div>
-      </section> */}
+      </section>
       {/* End Featured Listings */}
 
       {/* Explore property-city */}
@@ -224,9 +242,9 @@ const Home_V1 = () => {
                 </p>
               </div>
             </div> */}
-            {/* End col-lg-9 */}
+      {/* End col-lg-9 */}
 
-            {/* <div className="col-lg-3">
+      {/* <div className="col-lg-3">
               <div className="text-start text-lg-end mb-3">
                 <a className="ud-btn2" href="#">
                   See All Cities
@@ -234,19 +252,19 @@ const Home_V1 = () => {
                 </a>
               </div>
             </div> */}
-            {/* End col-lg-3 */}
-          {/* </div> */}
-          {/* End .row */}
+      {/* End col-lg-3 */}
+      {/* </div> */}
+      {/* End .row */}
 
-          {/* <div className="row">
+      {/* <div className="row">
             <div className="col-lg-12" data-aos="fade-up" data-aos-delay="300">
               <div className="property-city-slider position-relative">
                 <PropertiesByCities />
               </div>
             </div>
           </div> */}
-          {/* End .row */}
-        {/* </div>
+      {/* End .row */}
+      {/* </div>
       </section> */}
       {/* End Explore property-city */}
 
@@ -278,35 +296,35 @@ const Home_V1 = () => {
                 </p>
               </div>
             </div> */}
-            {/* End header */}
+      {/* End header */}
 
-            {/* <div className="col-auto mb30">
+      {/* <div className="col-auto mb30">
               <div className="row align-items-center justify-content-center">
                 <div className="col-auto">
                   <button className="testimonila_prev__active swiper_button">
                     <i className="far fa-arrow-left-long" />
                   </button>
                 </div> */}
-                {/* End prev */}
+      {/* End prev */}
 
-                {/* <div className="col-auto">
+      {/* <div className="col-auto">
                   <div className="pagination swiper--pagination testimonila_pagination__active" />
                 </div> */}
-                {/* End pagination */}
+      {/* End pagination */}
 
-                {/* <div className="col-auto">
+      {/* <div className="col-auto">
                   <button className="testimonila_next__active swiper_button">
                     <i className="far fa-arrow-right-long" />
                   </button>
                 </div> */}
-                {/* End Next */}
-              {/* </div>
+      {/* End Next */}
+      {/* </div>
             </div> */}
-            {/* End .col for navigation and pagination */}
-          {/* </div> */}
-          {/* End .row */}
+      {/* End .col for navigation and pagination */}
+      {/* </div> */}
+      {/* End .row */}
 
-          {/* <div className="row">
+      {/* <div className="row">
             <div className="col-lg-12">
               <div
                 className="testimonial-slider"
@@ -334,13 +352,13 @@ const Home_V1 = () => {
               </div>
             </div>
           </div> */}
-          {/* End .row */}
+      {/* End .row */}
 
-          {/* <div className="row" data-aos="fade-up" data-aos-delay="300">
+      {/* <div className="row" data-aos="fade-up" data-aos-delay="300">
             <Blog />
           </div> */}
-          {/* End .row */}
-        {/* </div>
+      {/* End .row */}
+      {/* </div>
       </section> */}
       {/* Explore Blog */}
 
@@ -366,6 +384,32 @@ const Home_V1 = () => {
         </div>
       </section> */}
       {/* End Our Partners */}
+
+      {/* Discover Properties */}
+      <section className="pb-20">
+        <div className="how-we-help position-relative mx-auto bgc-thm-light maxw1600 pt120 pt60-md pb90 pb30-md bdrs12 mx20-lg">
+          <div className="container">
+            <div className="row">
+              <div
+                className="col-lg-6 m-auto wow fadeInUp"
+                data-wow-delay="300ms"
+              >
+                <div className="main-title text-center">
+                  <h2 className="title">Discover Properties</h2>
+                  <p className="paragraph">
+                    Find Properties In Your Favorite Cities
+                  </p>
+                </div>
+              </div>
+            </div>
+            {/* End .row */}
+
+            <div className="row">
+              <Explore />
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Our CTA */}
       <CallToActions />

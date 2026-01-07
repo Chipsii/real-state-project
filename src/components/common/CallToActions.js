@@ -41,14 +41,14 @@ const CallToActions = () => {
               <div className="cta-btns-style1 d-block d-sm-flex align-items-center justify-content-lg-end">
                 <Link
                   href="/contact"
-                  className="ud-btn btn-transparent mr30 mr0-xs"
+                  className="ud-btn btn-dark mr30 mr0-xs"
                 >
-                  Contact Us
-                  <i className="fal fa-arrow-right-long" />
+                  <span className="fab fa-whatsapp text-white vam pe-2" />
+                  +880 13137 14079
                 </Link>
                 <Link href="/contact" className="ud-btn btn-dark">
                   <span className="flaticon-call vam pe-2" />
-                  920 851 9087
+                  +880 13137 14080
                 </Link>
               </div>
             </div>

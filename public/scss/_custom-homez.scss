@@ -466,3 +466,37 @@ header.nav-homepage-style.light-header .ace-responsive-menu .sub-menu a {
         }
     }
 }
+
+// Ensure standard bullet dots render for About values list
+.about-values-list {
+    list-style: disc !important;
+    list-style-position: outside;
+}
+
+.about-values-list > li {
+    list-style: inherit;
+}
+
+// Social icons under About values
+.about-values-social {
+    gap: 14px;
+}
+
+.about-social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: #001930;
+    color: #ffffff;
+    font-size: 18px;
+    line-height: 1;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+}
+
+.about-social-icon:hover {
+    transform: translateY(-1px);
+}

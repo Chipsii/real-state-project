@@ -2,7 +2,7 @@ module.exports = [
   {
 
     id: 1,
-    image: "/images/listings/g1-1.jpg",
+    image: "/images/listings/house-1.png",
     title: "Equestrian Family Home",
     city:'New York',location: "New York City, CA, USA",
     bed: "1",
@@ -32,7 +32,7 @@ module.exports = [
   {
 
     id: 2,
-    image: "/images/listings/g1-2.jpg",
+    image: "/images/listings/house-1.png",
     title: "Luxury villa in Rego Park",
     city:'Los Angeles',location: "Los Angeles City, CA, USA",
 
@@ -62,7 +62,7 @@ module.exports = [
   },
   {
     id: 3,
-    image: "/images/listings/g1-3.jpg",
+    image: "/images/listings/house-1.png",
     title: "Equestrian Family Home",
     city:'Texas',location: "Texas City, CA, USA",
 
@@ -91,7 +91,7 @@ module.exports = [
   },
   {
     id: 4,
-    image: "/images/listings/g1-4.jpg",
+    image: "/images/listings/house-1.png",
     title: "Luxury villa in Rego Park",
     city:'New Jersey',location: "New Jersey City, CA, USA",
     lat: 39.62158564223682,
@@ -121,7 +121,7 @@ module.exports = [
   },
   {
     id: 5,
-    image: "/images/listings/g1-1.jpg",
+    image: "/images/listings/house-1.png",
     title: "Equestrian Family Home",
     city:'San Diego',location: "San Diego City, CA, USA",
 
@@ -150,7 +150,7 @@ module.exports = [
   },
   {
     id: 6,
-    image: "/images/listings/g1-2.jpg",
+    image: "/images/listings/house-1.png",
     title: "Luxury villa in Rego Park",
     city:'California',location: "California City, CA, USA",
     lat: 32.740991655365605,
@@ -179,7 +179,7 @@ module.exports = [
   },
   {
     id: 7,
-    image: "/images/listings/g1-3.jpg",
+    image: "/images/listings/house-1.png",
     title: "Equestrian Family Home",
     city:'San Francisco',location: "San Francisco City, CA, USA",
     lat: 32.740991655365605,
@@ -206,7 +206,7 @@ module.exports = [
   },
   {
     id: 8,
-    image: "/images/listings/g1-4.jpg",
+    image: "/images/listings/house-1.png",
     title: "Luxury villa in Rego Park",
     city:'New York',location: "New York City, CA, USA",
     lat: 40.7279707552121,
