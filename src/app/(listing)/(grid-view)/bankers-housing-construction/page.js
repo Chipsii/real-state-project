@@ -21,7 +21,7 @@ const BankersHousingConstruction = () => {
       {/* End Mobile Nav  */}
 
       {/* Breadcumb Sections */}
-      <section className="breadcumb-section bgc-f7">
+      <section className="breadcumb-section bgc-f7 breadcumb-dark">
         <div className="container">
           <div className="row">
             <div className="col-lg-12">

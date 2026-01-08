@@ -11,6 +11,7 @@ const PropertyType = ({filterFunctions}) => {
     { label: "Apartments", defaultChecked: true },
     { label: "Office" },
     { label: "Villa" },
+    { label: "Townhome" },
    
   ];
 

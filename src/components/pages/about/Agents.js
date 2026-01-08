@@ -1,67 +1,53 @@
 "use client";
 import agents from "@/data/agents";
 import Image from "next/image";
-import Link from "next/link";
-import { Navigation, Pagination } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
 
 const Agents = () => {
+  const fallbackRoles = ["Sr. Manager(Sales", "Deputy Manager(Sales)"];
+
   return (
-    <>
-      <Swiper
-        spaceBetween={30}
-        modules={[Navigation, Pagination]}
-        navigation={{
-          nextEl: ".agent_next__active",
-          prevEl: ".agent_prev__active",
-        }}
-        pagination={{
-          el: ".agent_pagination__active",
-          clickable: true,
-        }}
-        breakpoints={{
-          300: {
-            slidesPerView: 2,
-            spaceBetween: 15,
-          },
-          768: {
-            slidesPerView: 3,
-            spaceBetween: 15,
-          },
-          1024: {
-            slidesPerView: 4,
-          },
-          1200: {
-            slidesPerView: 5,
-          },
-        }}
-        autoplay={{ delay: 3000 }} // Set the desired delay for autoplay
-      >
-        {agents.slice(0, 7).map((agent, index) => (
-          <SwiperSlide key={index}>
-            <div className="item" key={index}>
-              <Link href={`/agent-single/${agent.id}`}>
-                <div className="team-style1">
-                  <div className="team-img">
-                    <Image
-                      width={217}
-                      height={248}
-                      className="w-100 h-100 cover"
-                      src={agent.image}
-                      alt="agent team"
-                    />
-                  </div>
-                  <div className="team-content pt20">
-                    <h6 className="name mb-1">{agent.name}</h6>
-                    <p className="text fz15 mb-0">Broker</p>
-                  </div>
+    <div className="row justify-content-center">
+      {agents.slice(0, 7).map((agent, index) => (
+        <div
+          key={index}
+          className="col-6 col-md-4 col-lg-3 mb30 d-flex justify-content-center"
+        >
+          <div className="item">
+            <div className="team-style1">
+              <div className="d-inline-block text-start">
+                <div className="team-img">
+                  <Image
+                    width={217}
+                    height={248}
+                    className="cover"
+                    src={agent.image}
+                    alt="agent team"
+                  />
                 </div>
-              </Link>
+                <div className="team-content pt20">
+                  <h6 className="name mb-1">{agent.name}</h6>
+                  <p className="text fz15 mb-0">
+                    {agent.role ?? fallbackRoles[index % fallbackRoles.length]}
+                  </p>
+                </div>
+                <div className="about-values-social d-flex align-items-center mt-3">
+                <span className="fab fa-facebook-f about-social-icon" aria-label="Facebook" />
+                <span className="about-social-icon" aria-label="Twitter">
+                  <Image
+                    src="/images/icon/twitter-new.svg"
+                    alt="Twitter"
+                    width={16}
+                    height={16}
+                  />
+                </span>
+                <span className="fab fa-linkedin-in about-social-icon" aria-label="LinkedIn" />
+              </div>
+              </div>
             </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
-    </>
+          </div>
+        </div>
+      ))}
+    </div>
   );
 };
 

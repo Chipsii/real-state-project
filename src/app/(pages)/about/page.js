@@ -31,6 +31,13 @@ const About = () => {
           <div className="row">
             <div className="col-lg-12">
               <div className="breadcumb-style1">
+                <Image
+                  width={264}
+                  height={264}
+                  className="mb20"
+                  src="/images/home/home-logo.png"
+                  alt="Fortress Group"
+                />
                 <h2 className="title">About Us</h2>
                 <div className="breadcumb-list">
                   <a href="#">Home</a>
@@ -86,7 +93,7 @@ const About = () => {
                   height={515}
                   priority
                   className="w-100 h-100 cover"
-                  src="/images/about/about-page-banner.jpg"
+                  src="/images/about/about-banner.png"
                   alt="about banner"
                 />
               </div>
@@ -113,16 +120,16 @@ const About = () => {
       {/* Exclusive Agents */}
       <section className="pb90">
         <div className="container">
-          <div className="row  justify-content-center">
+          <div className="row justify-content-center">
             <div className="col-auto">
               <div
                 className="main-title"
                 data-aos="fade-up"
                 data-aos-delay="100"
               >
-                <h2 className="title">Our Exclusive Agetns</h2>
+                <h2 className="title">Meet Our Agents</h2>
                 <p className="paragraph">
-                  Aliquam lacinia diam quis lacus euismod
+                  Find Properties In Your Favorite Cities
                 </p>
               </div>
             </div>
@@ -173,7 +180,7 @@ const About = () => {
 
       {/* Our Partners */}
       <section className="our-partners">
-        <div className="container">
+        {/* <div className="container">
           <div className="row">
             <div className="col-lg-12" data-aos="fade-up">
               <div className="main-title text-center">
@@ -190,7 +197,7 @@ const About = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </section>
       {/* End Our Partners */}
 

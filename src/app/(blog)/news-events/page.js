@@ -21,7 +21,7 @@ const NewsEvents = () => {
 			{/* End Mobile Nav  */}
 
 			{/* Breadcrumb Start */}
-			<section className="breadcumb-section">
+			<section className="breadcumb-section breadcumb-dark">
 				<div className="container">
 					<div className="row">
 						<div className="col-lg-12">

@@ -453,13 +453,14 @@ li {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    background-image: url(../images/background/about-page-bg.jpg);
+    background-image: url(../images/about/about-bg.png);
     background-size: cover;
     background-position: center;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     height: 450px;
+    text-align: center;
 }
 
 .breadcumb-section3 {
@@ -484,18 +485,31 @@ li {
 .breadcumb-style1 {
     position: relative;
 }
+.breadcumb-section2 .breadcumb-style1 {
+    width: 100%;
+}
 .breadcumb-style1 .title {
     letter-spacing: 0.02em;
+    color: #ffffff;
 }
 .breadcumb-style1 .breadcumb-list {
     position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
 }
 .breadcumb-style1 .breadcumb-list a {
     display: inline-block;
-    color: var(--headings-color);
+    color: #ffffff;
     font-family: var(--title-font-family);
     font-weight: 400;
     position: relative;
+}
+.breadcumb-style1 .breadcumb-list a:hover {
+    color: #ffffff;
 }
 .breadcumb-style1 .breadcumb-list a:first-child {
     margin-right: 15px;
@@ -505,6 +519,22 @@ li {
     font-size: 14px;
     position: absolute;
     right: -10px;
+}
+
+.breadcumb-dark .breadcumb-style1 .title {
+    color: var(--headings-color);
+}
+.breadcumb-dark .breadcumb-style1 {
+    text-align: left;
+}
+.breadcumb-dark .breadcumb-style1 .breadcumb-list {
+    justify-content: flex-start;
+}
+.breadcumb-dark .breadcumb-style1 .breadcumb-list a {
+    color: var(--headings-color);
+}
+.breadcumb-dark .breadcumb-style1 .breadcumb-list a:hover {
+    color: var(--headings-color);
 }
 
 /* Dashboard Style Code Here */
@@ -4815,7 +4845,7 @@ section {
 }
 
 .cta-banner3:before {
-    background-image: url(../images/about/cta-side-bg-1.jpg);
+    background-image: url(../images/about/about-banner2.jpg);
     background-size: cover;
     content: "";
     position: absolute;
@@ -9596,7 +9626,7 @@ input:focus-visible {
 
 .selection input[type="radio"]:checked ~ label {
     border: 2px solid #181a20;
-    outlinie: transparent;
+    outline: transparent;
     z-index: 1;
 }
 

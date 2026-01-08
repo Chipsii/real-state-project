@@ -1,39 +1,30 @@
 'use client'
 
-import React from "react";
+import React, { useEffect } from "react";
 
 const ListingStatus = ({filterFunctions}) => {
-  const options = [
-    { id: "flexRadioDefault3", label: "All" , defaultChecked: true },
-    { id: "flexRadioDefault1", label: "Buy" },
-    { id: "flexRadioDefault2", label: "Rent", },
+  const option = { id: "flexRadioDefault1", label: "Buy" };
 
-  ];
+  useEffect(() => {
+    if (!filterFunctions?.listingStatus) {
+      filterFunctions?.handlelistingStatus?.(option.label);
+    }
+  }, [filterFunctions?.listingStatus]);
 
   return (
     <>
-      {options.map((option) => (
-        <div
-          className="form-check d-flex align-items-center mb10"
-          key={option.id}
-         
-        >
-          <input
-            className="form-check-input"
-            type="radio"
-            checked={filterFunctions?.listingStatus == option.label}
-            
-            onChange={()=>filterFunctions.handlelistingStatus(option.label)}
-           
-            
-   
-            
-          />
-          <label className="form-check-label" htmlFor={option.id}>
-            {option.label}
-          </label>
-        </div>
-      ))}
+      <div className="form-check d-flex align-items-center mb10">
+        <input
+          className="form-check-input"
+          id={option.id}
+          type="radio"
+          checked={(filterFunctions?.listingStatus ?? option.label) === option.label}
+          onChange={() => filterFunctions?.handlelistingStatus(option.label)}
+        />
+        <label className="form-check-label" htmlFor={option.id}>
+          {option.label}
+        </label>
+      </div>
     </>
   );
 };

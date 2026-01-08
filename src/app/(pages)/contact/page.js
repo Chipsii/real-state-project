@@ -65,8 +65,8 @@ const Contact = () => {
 
       {/* Visit our Office */}
       <section className="pt0 pb90 pb10-md">
-        <div className="container">
-          <div className="row">
+        {/* <div className="container"> */}
+          {/* <div className="row">
             <div
               className="col-lg-6 m-auto"
               data-aos="fade-up"
@@ -80,14 +80,14 @@ const Contact = () => {
                 </p>
               </div>
             </div>
-          </div>
+          </div> */}
           {/* End .row */}
 
-          <div className="row" data-aos="fade-up" data-aos-delay="100">
+          {/* <div className="row" data-aos="fade-up" data-aos-delay="100">
             <Office />
-          </div>
+          </div> */}
           {/* End .row */}
-        </div>
+        {/* </div> */}
       </section>
       {/* End Visit our Office */}
 

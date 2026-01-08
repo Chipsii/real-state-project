@@ -1,7 +1,7 @@
 export const blogs = [
   {
     id: 1,
-    image: "/images/blog/blog-1.jpg",
+    image: "/images/blog/couple-pic.jpg",
     date: {
       month: "July",
       day: "28",
@@ -11,7 +11,7 @@ export const blogs = [
   },
   {
     id: 2,
-    image: "/images/blog/blog-2.jpg",
+    image: "/images/blog/couple-pic.jpg",
 
     date: {
       month: "July",
@@ -22,7 +22,7 @@ export const blogs = [
   },
   {
     id: 3,
-    image: "/images/blog/blog-3.jpg",
+    image: "/images/blog/couple-pic.jpg",
     date: {
       month: "July",
       day: "28",
@@ -35,7 +35,7 @@ export const blogs = [
 export const blogData = [
   {
     id: 4,
-    image: "/images/blog/blog-16.jpg",
+    image: "/images/blog/couple-pic.jpg",
     date: {
       month: "July",
       day: "28",
@@ -46,7 +46,7 @@ export const blogData = [
   },
   {
     id: 5,
-    image: "/images/blog/blog-17.jpg",
+    image: "/images/blog/couple-pic.jpg",
     date: {
       month: "July",
       day: "28",
@@ -57,7 +57,7 @@ export const blogData = [
   },
   {
     id: 6,
-    image: "/images/blog/blog-18.jpg",
+    image: "/images/blog/couple-pic.jpg",
     date: {
       month: "July",
       day: "28",
@@ -68,7 +68,7 @@ export const blogData = [
   },
   {
     id: 7,
-    image: "/images/blog/blog-19.jpg",
+    image: "/images/blog/couple-pic.jpg",
     date: {
       month: "July",
       day: "28",
@@ -82,7 +82,7 @@ export const blogData = [
 export const blogDataTwo = [
   {
     id: 8,
-    image: "/images/blog/blog-10.jpg",
+    image: "/images/blog/couple-pic.jpg",
     date: {
       month: "July",
       day: "28",
@@ -93,7 +93,7 @@ export const blogDataTwo = [
   },
   {
     id: 9,
-    image: "/images/blog/blog-11.jpg",
+    image: "/images/blog/couple-pic.jpg",
     date: {
       month: "July",
       day: "28",
@@ -104,7 +104,7 @@ export const blogDataTwo = [
   },
   {
     id: 10,
-    image: "/images/blog/blog-12.jpg",
+    image: "/images/blog/couple-pic.jpg",
     date: {
       month: "July",
       day: "28",
@@ -115,7 +115,7 @@ export const blogDataTwo = [
   },
   {
     id: 11,
-    image: "/images/blog/blog-13.jpg",
+    image: "/images/blog/couple-pic.jpg",
     date: {
       month: "July",
       day: "28",
@@ -126,7 +126,7 @@ export const blogDataTwo = [
   },
   {
     id: 12,
-    image: "/images/blog/blog-14.jpg",
+    image: "/images/blog/couple-pic.jpg",
     date: {
       month: "July",
       day: "28",
@@ -137,7 +137,7 @@ export const blogDataTwo = [
   },
   {
     id: 13,
-    image: "/images/blog/blog-15.jpg",
+    image: "/images/blog/couple-pic.jpg",
     date: {
       month: "July",
       day: "28",
@@ -152,7 +152,7 @@ export const blogsThree = [
   {
     id: 14,
     category: ["Home Improvement", ""],
-    image: "/images/blog/blog-1.jpg",
+    image: "/images/blog/couple-pic.jpg",
     date: {
       month: "July",
       day: "28",
@@ -163,7 +163,7 @@ export const blogsThree = [
   {
     id: 15,
     category: "Life & Style",
-    image: "/images/blog/blog-2.jpg",
+    image: "/images/blog/couple-pic.jpg",
     date: {
       month: "July",
       day: "28",
@@ -174,7 +174,7 @@ export const blogsThree = [
   {
     id: 16,
     category: "Home Improvement",
-    image: "/images/blog/blog-3.jpg",
+    image: "/images/blog/couple-pic.jpg",
     date: {
       month: "July",
       day: "28",
@@ -185,7 +185,7 @@ export const blogsThree = [
   {
     id: 17,
     category: "Life & Style",
-    image: "/images/blog/blog-4.jpg",
+    image: "/images/blog/couple-pic.jpg",
     date: {
       month: "July",
       day: "28",
@@ -196,7 +196,7 @@ export const blogsThree = [
   {
     id: 18,
     category: "Home Improvement",
-    image: "/images/blog/blog-5.jpg",
+    image: "/images/blog/couple-pic.jpg",
     date: {
       month: "July",
       day: "28",
@@ -207,7 +207,7 @@ export const blogsThree = [
   {
     id: 19,
     category: "Finance",
-    image: "/images/blog/blog-6.jpg",
+    image: "/images/blog/couple-pic.jpg",
     date: {
       month: "July",
       day: "28",
@@ -218,7 +218,7 @@ export const blogsThree = [
   {
     id: 20,
     category: "Selling a Home",
-    image: "/images/blog/blog-7.jpg",
+    image: "/images/blog/couple-pic.jpg",
     date: {
       month: "July",
       day: "28",
@@ -229,7 +229,7 @@ export const blogsThree = [
   {
     id: 21,
     category: "Renting a Home",
-    image: "/images/blog/blog-8.jpg",
+    image: "/images/blog/couple-pic.jpg",
     date: {
       month: "July",
       day: "28",
@@ -240,7 +240,7 @@ export const blogsThree = [
   {
     id: 22,
     category: "Buying a Home",
-    image: "/images/blog/blog-9.jpg",
+    image: "/images/blog/couple-pic.jpg",
     date: {
       month: "July",
       day: "28",
@@ -254,7 +254,7 @@ export const blogsThree = [
 export const posts = [
   {
     id: 23,
-    image: "/images/blog/blog-s-3.jpg",
+    image: "/images/blog/couple-pic.jpg",
     content: "8 Tips for Achieving Maximum Coziness",
     date: {
       month: "July",
@@ -264,7 +264,7 @@ export const posts = [
   },
   {
     id: 24,
-    image: "/images/blog/blog-s-4.jpg",
+    image: "/images/blog/couple-pic.jpg",
     content: "A 3-Step Downsizing Plan",
     date: {
       month: "July",
@@ -274,7 +274,7 @@ export const posts = [
   },
   {
     id: 25,
-    image: "/images/blog/blog-s-5.jpg",
+    image: "/images/blog/couple-pic.jpg",
     content: "How to Plan an Outdoor Movie Night",
     date: {
       month: "July",
