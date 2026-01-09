@@ -6,11 +6,11 @@ import listings from "@/data/listings";
 
 const images = [
   {
-    src: "/images/listings/listing-single-3.jpg",
+    src: "/images/listings/property-detail-pic.jpg",
     alt: "2.jpg",
   },
   {
-    src: "/images/listings/listing-single-5.jpg",
+    src: "/images/listings/property-detail-pic.jpg",
     alt: "5.jpg",
   },
 ];
@@ -24,14 +24,14 @@ const PropertyGallery = ({id}) => {
           <div className="sp-img-content mb15-md">
             <div className="popup-img preview-img-1 sp-img">
               <Item
-                original={'/images/listings/listing-single-8.jpg'}
-                thumbnail={'/images/listings/listing-single-8.jpg'}
+                original={'/images/listings/property-detail-pic.jpg'}
+                thumbnail={'/images/listings/property-detail-pic.jpg'}
                 width={890}
                 height={510}
               >
                 {({ ref, open }) => (
                   <Image
-                    src={'/images/listings/listing-single-8.jpg'}
+                    src={'/images/listings/property-detail-pic.jpg'}
                     width={890}
                     height={510}
                     ref={ref}

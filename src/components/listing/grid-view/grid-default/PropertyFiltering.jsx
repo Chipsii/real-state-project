@@ -32,7 +32,8 @@ export default function PropertyFiltering() {
     ]);
   }, [pageNumber, sortedFilteredData]);
 
-  const [listingStatus, setListingStatus] = useState("All");
+  // Buy-only page: keep only Buy filtering enabled by default.
+  const listingStatus = "Buy";
   const [propertyTypes, setPropertyTypes] = useState([]);
   const [priceRange, setPriceRange] = useState([0, 100000]);
   const [bedrooms, setBedrooms] = useState(0);
@@ -44,7 +45,6 @@ export default function PropertyFiltering() {
   const [searchQuery, setSearchQuery] = useState("");
 
   const resetFilter = () => {
-    setListingStatus("All");
     setPropertyTypes([]);
     setPriceRange([0, 100000]);
     setBedrooms(0);
@@ -59,9 +59,8 @@ export default function PropertyFiltering() {
     });
   };
 
-  const handlelistingStatus = (elm) => {
-    setListingStatus((pre) => (pre == elm ? "All" : elm));
-  };
+  // Buy-only: no-op handler retained for sidebar compatibility.
+  const handlelistingStatus = () => {};
 
   const handlepropertyTypes = (elm) => {
     if (elm == "All") {
@@ -82,7 +81,6 @@ export default function PropertyFiltering() {
     setBathroms(elm);
   };
   const handlelocation = (elm) => {
-    console.log(elm);
     setLocation(elm);
   };
   const handlesquirefeet = (elm) => {
@@ -126,15 +124,7 @@ export default function PropertyFiltering() {
   };
 
   useEffect(() => {
-    const refItems = listings.filter((elm) => {
-      if (listingStatus == "All") {
-        return true;
-      } else if (listingStatus == "Buy") {
-        return !elm.forRent;
-      } else if (listingStatus == "Rent") {
-        return elm.forRent;
-      }
-    });
+    const refItems = listings.filter((elm) => !elm.forRent);
 
     let filteredArrays = [];
 
@@ -221,7 +211,6 @@ export default function PropertyFiltering() {
 
     setFilteredData(commonItems);
   }, [
-    listingStatus,
     propertyTypes,
     priceRange,
     bedrooms,
