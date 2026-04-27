@@ -112,6 +112,7 @@ function buildFloorPlans(input) {
 const createNewListing = async (input) => {
     const media = buildMedia(input);
     const floorPlans = buildFloorPlans(input);
+    console.log(input);
     const availableFrom = input.availableFrom == null || input.availableFrom === ""
         ? undefined
         : input.availableFrom instanceof Date
@@ -157,6 +158,7 @@ const createNewListing = async (input) => {
         roofing: input.roofing ?? "",
         exteriorMaterial: input.exteriorMaterial ?? "",
         ownerNotes: input.ownerNotes ?? "",
+        agent: input.agent ?? "",
         geo: { type: "Point", coordinates: [input.lng, input.lat] },
     });
     return doc;
@@ -209,11 +211,9 @@ async function listListings(q) {
         filter.businessType = q.businessType;
     if (q.propertyId)
         filter._id = q.propertyId;
-    // ✅ UPDATED: pricing instead of price/currency
     const { min, max } = normalizePriceRange(q);
     const pricingClause = buildPricingFilter(min, max);
     if (pricingClause) {
-        // combine with existing $and if needed
         filter.$and = Array.isArray(filter.$and) ? filter.$and : [];
         filter.$and.push(pricingClause);
     }
@@ -313,12 +313,16 @@ const getListingById = async (id) => {
 };
 exports.getListingById = getListingById;
 async function getListingByTitleService(title) {
-    return listing_model_js_1.Listing.findOne({ title: { $regex: `^${escapeRegex(title)}$`, $options: "i" } })
+    const gg = listing_model_js_1.Listing.findOne({
+        title: { $regex: `^${escapeRegex(title)}$`, $options: "i" }
+    })
+        .populate("agent")
         .lean()
         .exec();
+    return gg;
 }
 async function getListingBySlugService(slug) {
-    return listing_model_js_1.Listing.findOne({ slug })
+    return listing_model_js_1.Listing.findOne({ slug }).populate("agent")
         .lean()
         .exec();
 }
@@ -332,6 +336,17 @@ async function updateListingById(id, payload) {
     const $set = { ...payload };
     delete $set.price;
     delete $set.currency;
+    if ("agent" in payload) {
+        if (payload.agent === null || payload.agent === "" || payload.agent === "null") {
+            $set.agent = undefined;
+        }
+        else {
+            if (!mongoose_1.default.isValidObjectId(payload.agent)) {
+                throw new AppError_js_1.AppError("Invalid agent id", 400);
+            }
+            $set.agent = payload.agent;
+        }
+    }
     if (payload.lat !== undefined || payload.lng !== undefined) {
         if (payload.lat === undefined || payload.lng === undefined) {
             throw new AppError_js_1.AppError("Both lat and lng are required together", 400);
@@ -384,7 +399,9 @@ async function updateListingById(id, payload) {
         };
         $set.media = buildMedia(mergedMediaInput);
     }
-    $set.slug = slugify(payload.title);
+    if (payload.title) {
+        $set.slug = slugify(payload.title);
+    }
     if ($set.pricing && typeof $set.pricing === "object") {
         $set.pricing = {
             ...$set.pricing,
@@ -394,7 +411,7 @@ async function updateListingById(id, payload) {
     if ($set.floorPlans !== undefined) {
         $set.floorPlans = buildFloorPlans({ floorPlans: payload.floorPlans });
     }
-    const updated = await listing_model_js_1.Listing.findByIdAndUpdate(id, { $set }, { new: true, runValidators: true });
+    const updated = await listing_model_js_1.Listing.findByIdAndUpdate(id, { $set }, { new: true, runValidators: true }).populate("agent");
     if (!updated) {
         throw new AppError_js_1.AppError("Listing not found", 404);
     }

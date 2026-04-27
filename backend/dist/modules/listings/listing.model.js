@@ -125,6 +125,12 @@ const listingSchema = new mongoose_1.default.Schema({
         type: { type: String, enum: ["Point"], required: true },
         coordinates: { type: [Number], required: true },
     },
+    agent: {
+        type: mongoose_1.default.Schema.Types.ObjectId,
+        ref: "Agent",
+        required: false,
+        index: true,
+    },
 }, { timestamps: true });
 listingSchema.index({ geo: "2dsphere" });
 listingSchema.index({ businessType: 1 });

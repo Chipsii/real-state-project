@@ -62,6 +62,7 @@ async function listingRoutes(app) {
                 properties: {
                     title: { type: "string", minLength: 2 },
                     description: { type: "string", default: "" },
+                    agent: { type: "string" },
                     media: {
                         type: "object",
                         required: ["cover"],
@@ -159,7 +160,6 @@ async function listingRoutes(app) {
                                 bedrooms: { type: "number", minimum: 0 },
                                 bathrooms: { type: "number", minimum: 0 },
                                 pricing: pricingBodySchema,
-                                // ✅ image OR pdf
                                 image: listingAssetSchemaBody,
                                 description: { type: "string", default: "" },
                                 order: { type: "number", default: 0 },
@@ -205,7 +205,7 @@ async function listingRoutes(app) {
                     "beds",
                     "baths",
                     "sqft",
-                    "pricing", // ✅ changed
+                    "pricing",
                     "forRent",
                     "propertyType",
                     "yearBuilding",
@@ -216,6 +216,7 @@ async function listingRoutes(app) {
                 properties: {
                     title: { type: "string", minLength: 2 },
                     description: { type: "string", default: "" },
+                    agent: { type: "string" },
                     media: {
                         type: "object",
                         required: ["cover"],
@@ -275,7 +276,6 @@ async function listingRoutes(app) {
                     beds: { type: "number", minimum: 0 },
                     baths: { type: "number", minimum: 0 },
                     sqft: { type: "number", minimum: 0 },
-                    // ✅ NEW
                     pricing: pricingBodySchema,
                     forRent: { type: "boolean" },
                     featured: { type: "boolean", default: false },
@@ -305,7 +305,7 @@ async function listingRoutes(app) {
                                 "sizeSqft",
                                 "bedrooms",
                                 "bathrooms",
-                                "pricing", // ✅ changed
+                                "pricing",
                                 "image",
                             ],
                             properties: {
@@ -313,7 +313,6 @@ async function listingRoutes(app) {
                                 sizeSqft: { type: "number", minimum: 0 },
                                 bedrooms: { type: "number", minimum: 0 },
                                 bathrooms: { type: "number", minimum: 0 },
-                                // ✅ NEW
                                 pricing: pricingBodySchema,
                                 image: {
                                     type: "object",

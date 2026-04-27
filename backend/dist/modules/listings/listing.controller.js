@@ -6,108 +6,7 @@ exports.deleteListing = deleteListing;
 const listing_services_js_1 = require("./listing.services.js");
 const responses_js_1 = require("../../utils/responses.js");
 const AppError_js_1 = require("../../utils/AppError.js");
-function normalizePricing(input) {
-    if (!input || typeof input !== "object")
-        return undefined;
-    if (input.pricing && typeof input.pricing === "object") {
-        const pr = { ...input.pricing };
-        if (pr.amount !== undefined)
-            pr.amount = Number(pr.amount);
-        if (pr.min !== undefined)
-            pr.min = Number(pr.min);
-        if (pr.max !== undefined)
-            pr.max = Number(pr.max);
-        if (!pr.currency)
-            pr.currency = "BDT";
-        if (pr.amount !== undefined && !Number.isFinite(pr.amount))
-            delete pr.amount;
-        if (pr.min !== undefined && !Number.isFinite(pr.min))
-            delete pr.min;
-        if (pr.max !== undefined && !Number.isFinite(pr.max))
-            delete pr.max;
-        return pr;
-    }
-    if (input.price !== undefined && input.price !== null) {
-        const amount = Number(input.price);
-        if (Number.isFinite(amount)) {
-            return {
-                amount,
-                currency: input.currency ? String(input.currency) : "BDT",
-            };
-        }
-    }
-    return undefined;
-}
-function normalizeAsset(input) {
-    if (!input || typeof input !== "object")
-        return undefined;
-    const a = { ...input };
-    if (!a.type)
-        a.type = "image";
-    if (a.type !== "image" && a.type !== "pdf") {
-        a.type = "image";
-    }
-    if (a.url !== undefined)
-        a.url = String(a.url).trim();
-    if (a.alt !== undefined)
-        a.alt = String(a.alt);
-    if (a.order !== undefined) {
-        const n = Number(a.order);
-        if (Number.isFinite(n))
-            a.order = n;
-        else
-            delete a.order;
-    }
-    if (a.pages !== undefined) {
-        const n = Number(a.pages);
-        if (Number.isFinite(n) && n >= 1)
-            a.pages = n;
-        else
-            delete a.pages;
-    }
-    return a;
-}
-function normalizeListingPayload(payload) {
-    const p = { ...(payload || {}) };
-    if (p.media) {
-        if (!Array.isArray(p.media.gallery)) {
-            p.media.gallery = p.media.gallery ? p.media.gallery : [];
-        }
-    }
-    const hasLat = p.lat !== undefined && p.lat !== null;
-    const hasLng = p.lng !== undefined && p.lng !== null;
-    if (hasLat && hasLng) {
-        const lat = Number(p.lat);
-        const lng = Number(p.lng);
-        if (Number.isFinite(lat) && Number.isFinite(lng)) {
-            p.geo = { type: "Point", coordinates: [lng, lat] };
-        }
-    }
-    if (p.floorPlans !== undefined) {
-        if (!Array.isArray(p.floorPlans))
-            p.floorPlans = [];
-    }
-    const listingPricing = normalizePricing(p);
-    if (listingPricing)
-        p.pricing = listingPricing;
-    delete p.price;
-    delete p.currency;
-    if (Array.isArray(p.floorPlans)) {
-        p.floorPlans = p.floorPlans.map((fp) => {
-            const plan = { ...(fp || {}) };
-            const planPricing = normalizePricing(plan);
-            if (planPricing)
-                plan.pricing = planPricing;
-            delete plan.price;
-            delete plan.currency;
-            if (plan.image) {
-                plan.image = normalizeAsset(plan.image);
-            }
-            return plan;
-        });
-    }
-    return p;
-}
+const listings_js_1 = require("../../utils/listings.js");
 const addListing = async (request, reply) => {
     const data = request.body;
     try {
@@ -118,9 +17,10 @@ const addListing = async (request, reply) => {
             });
         }
         const exists = await (0, listing_services_js_1.getListingByTitleService)(data.title);
-        if (exists)
-            (0, responses_js_1.sendError)(reply, { message: "Property with that title already exists" });
-        const normalized = normalizeListingPayload(data);
+        if (exists) {
+            return (0, responses_js_1.sendError)(reply, { message: "Property with that title already exists", statusCode: 409 });
+        }
+        const normalized = (0, listings_js_1.normalizeListingPayload)(data);
         if (!normalized.pricing) {
             return (0, responses_js_1.sendError)(reply, {
                 message: "pricing is required (amount OR min+max)",
@@ -135,6 +35,7 @@ const addListing = async (request, reply) => {
         });
     }
     catch (err) {
+        request.log.error({ err }, "Error adding listing");
         return (0, responses_js_1.sendError)(reply, {
             message: "Error adding listing",
             statusCode: 500,
@@ -145,6 +46,7 @@ exports.addListing = addListing;
 const getAllListings = async (request, reply) => {
     try {
         const data = await (0, listing_services_js_1.listListings)(request.query);
+        console.log(data);
         return (0, responses_js_1.sendSuccess)(reply, { data });
     }
     catch (err) {
@@ -230,7 +132,7 @@ const getListingBySlug = async (request, reply) => {
         return (0, responses_js_1.sendSuccess)(reply, { data: listing });
     }
     catch (err) {
-        request.log.error({ err }, "Failed to fetch listing by title");
+        request.log.error({ err }, "Failed to fetch listing by slug");
         return (0, responses_js_1.sendError)(reply, {
             statusCode: 500,
             message: "Failed to fetch listing",
@@ -242,7 +144,7 @@ async function updateListing(request, reply) {
     try {
         const { id } = request.params;
         const payload = request.body;
-        const normalized = normalizeListingPayload(payload);
+        const normalized = (0, listings_js_1.normalizeListingPayload)(payload);
         if (!normalized?.pricing) {
             return (0, responses_js_1.sendError)(reply, {
                 statusCode: 400,

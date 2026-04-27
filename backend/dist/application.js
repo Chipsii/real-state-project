@@ -4,6 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.buildApp = buildApp;
+const rate_limit_1 = __importDefault(require("@fastify/rate-limit"));
 const fastify_1 = __importDefault(require("fastify"));
 const autoload_1 = __importDefault(require("@fastify/autoload"));
 const node_path_1 = __importDefault(require("node:path"));
@@ -29,6 +30,16 @@ async function buildApp() {
         },
         methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
         allowedHeaders: ["Content-Type", "Authorization"],
+    });
+    app.register(rate_limit_1.default, {
+        global: false,
+        errorResponseBuilder: function (request, context) {
+            return {
+                statusCode: 429,
+                error: 'Too Many Requests',
+                message: `You have reached the maximum allowed requests. Please try again later.`,
+            };
+        },
     });
     await app.register(multipart_1.default, {
         limits: { fileSize: 10 * 1024 * 1024 },
