@@ -65,7 +65,7 @@ function getOrCreateVisitorId() {
   }
 }
 
-const isObjectIdLike = (v) => /^[a-f\d]{24}$/i.test(String(v || "").trim());
+const isObjectIdLike = (v) => /^[a-f\d]{24}/i.test(String(v || "").trim());
 
 const decodeSlugToTitle = (slugOrTitle) => {
   const s = String(slugOrTitle || "").trim();

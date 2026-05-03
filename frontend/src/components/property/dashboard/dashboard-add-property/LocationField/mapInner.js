@@ -16,43 +16,46 @@ export default function MapInner({ lat, lng, onChange }) {
     Number.isFinite(Number(lat)) && Number.isFinite(Number(lng));
 
   const center = useMemo(
-    () => (hasCoords ? { lat: Number(lat), lng: Number(lng) } : { lat: 51.505, lng: -0.09 }),
+    () =>
+      hasCoords
+        ? { lat: Number(lat), lng: Number(lng) }
+        : { lat: 51.505, lng: -0.09 },
     [hasCoords, lat, lng]
   );
 
   const boxStyle = { height: 550, width: "100%" };
 
   const { isLoaded, loadError } = useJsApiLoader({
-    googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || "",
-    // libraries: ["places"], // enable if you later add Autocomplete
+    googleMapsApiKey:
+      process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || "",
   });
 
-  // Move map when lat/lng changes (similar to your MoveMap)
   useEffect(() => {
-    if (!mapRef.current) return;
-    if (!hasCoords) return;
+    if (!mapRef.current || !hasCoords) return;
 
     mapRef.current.panTo({ lat: Number(lat), lng: Number(lng) });
     mapRef.current.setZoom(14);
   }, [hasCoords, lat, lng]);
 
+  // ✅ SECURE SEARCH (NOW USES YOUR API ROUTE)
   async function searchLocation() {
     if (!query.trim()) return;
-    if (!window.google?.maps) return;
 
     try {
       setLoading(true);
 
-      const geocoder = new window.google.maps.Geocoder();
-      const { results } = await geocoder.geocode({ address: query });
+      const res = await fetch(
+        `/api/geocode?q=${encodeURIComponent(query)}`
+      );
 
-      if (!results?.length) {
-        alert("Location not found");
+      const data = await res.json();
+
+      if (!res.ok) {
+        alert(data.error || "Location not found");
         return;
       }
 
-      const loc = results[0].geometry.location;
-      onChange({ lat: loc.lat(), lng: loc.lng() });
+      onChange({ lat: data.lat, lng: data.lng });
     } catch (err) {
       console.error(err);
       alert("Failed to search location");
@@ -84,6 +87,7 @@ export default function MapInner({ lat, lng, onChange }) {
           onChange={(e) => setQuery(e.target.value)}
           onKeyDown={handleKeyDown}
         />
+
         <button
           type="button"
           className="ud-btn btn-thm"
@@ -94,8 +98,8 @@ export default function MapInner({ lat, lng, onChange }) {
         </button>
       </div>
 
-      {/* 🗺 Google Map */}
-      <div style={boxStyle} className="h550">
+      {/* 🗺 Map */}
+      <div style={boxStyle}>
         <GoogleMap
           mapContainerStyle={boxStyle}
           center={center}
@@ -105,7 +109,11 @@ export default function MapInner({ lat, lng, onChange }) {
           onClick={(e) => {
             const nextLat = e.latLng?.lat();
             const nextLng = e.latLng?.lng();
-            if (typeof nextLat === "number" && typeof nextLng === "number") {
+
+            if (
+              typeof nextLat === "number" &&
+              typeof nextLng === "number"
+            ) {
               onChange({ lat: nextLat, lng: nextLng });
             }
           }}
@@ -115,7 +123,14 @@ export default function MapInner({ lat, lng, onChange }) {
             fullscreenControl: true,
           }}
         >
-          {hasCoords && <Marker position={{ lat: Number(lat), lng: Number(lng) }} />}
+          {hasCoords && (
+            <Marker
+              position={{
+                lat: Number(lat),
+                lng: Number(lng),
+              }}
+            />
+          )}
         </GoogleMap>
       </div>
     </div>

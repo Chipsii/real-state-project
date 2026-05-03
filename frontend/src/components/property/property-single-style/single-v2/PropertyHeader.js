@@ -121,7 +121,7 @@ const PropertyHeader = ({ id, property, onShareClick, onNewTabClick }) => {
     // 2. Handle flat amount
     if (pricing.amount != null) {
       const res = calc(pricing.amount);
-      return res ? `${priceText} / ${sqft} sq ft = $${res}/sq ft` : null;
+      return res ? `${priceText} / ${sqft} sq ft = ৳${res}/sq ft` : null;
     }
 
     // 3. Handle min/max range

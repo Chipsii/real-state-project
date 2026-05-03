@@ -88,77 +88,147 @@ const Home_V1 = async () => {
           </div>
 
           {/* CEO Section (Image Left, Text Right) */}
-          <div className="row mt80 align-items-center" data-aos="fade-up" data-aos-delay="200">
-            <div className="col-lg-5 col-xl-5">
-              <div className="about-img-box position-relative">
+          <div
+            className="row mt80 align-items-stretch"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            {/* LEFT: IMAGE */}
+            <div className="col-lg-5 col-xl-5 d-flex">
+              <div className="about-img-box w-100 h-100">
                 <Image
                   width={518}
                   height={601}
-                  className="w-100 h-100 cover bdrs12"
                   src="/images/owner-pic.png"
                   alt="Md. Aminur Rahman Mandal - CEO"
+                  className="w-100 h-100 bdrs12 object-fit-cover"
                 />
               </div>
             </div>
-            <div className="col-lg-7 col-xl-6 offset-xl-1 mt-4 mt-lg-0">
-              <h4 className="mb-1">Md. Aminur Rahman Mandal</h4>
-              <p className="text-thm fz15 mb25">Founder Chairman & Managing Director</p>
-              
-              <p className="text mb25">
-                Aminur Rahman Mandal completed his BBA in 2007 and MBA in 2009 in Accounting from Islamic University, Kushtia.
-                He began his professional career in the banking sector and served at several leading commercial banks in Bangladesh, 
-                including United Commercial Bank, EXIM Bank, Social Islami Bank, First Security Islami Bank, and Dutch-Bangla Bank Limited. 
-                He worked as a Management Trainee and Probationary Officer during the early stage of his career (2009–2011). 
-                He later continued his career at Dutch-Bangla Bank Limited. In 2022, he resigned from Dutch-Bangla Bank Limited while serving as a Deputy Manager at a renowned branch.
-              </p>
-              <p className="text mb25">
-                During his professional career, he founded Bankers Housing Society in 2018 with a clear vision to deliver secure, sustainable, and value-driven residential projects for bankers, their relatives, and their family friends.
-                Under his leadership, the company has expanded its operational scope by incorporating associated ventures such as Bankers Housing Construction and Bankers Housing Development, and has also formed a platform where all can join to solve their accommodation problems in Dhaka city.
-              </p>
-              <p className="text mb25">
-                With a forward-looking vision, Aminur Rahman Mandal is committed to establishing Bankers Housing Society, Bankers Housing Construction, and Bankers Housing Development as trusted and dependable names in the real estate sector, contributing to sustainable urban development and enhancing investor confidence for generations.
-              </p>
-              
-              <h5 className="mb-3">Our motto is "We Build Trust"</h5>
-              <ul className="mb0 ps-3 about-values-list text mb40">
-                <li><strong>Excellence:</strong> Every project is crafted with world-class quality and attention to detail.</li>
-                <li><strong>Trust & Transparency:</strong> We believe in honesty and building long-term relationships.</li>
-                <li><strong>Innovation:</strong> We combine creativity and technology to create future-ready solutions.</li>
-              </ul>
 
-              <div className="about-values-social d-flex align-items-center">
-                <span className="fab fa-facebook-f about-social-icon me-3" aria-label="Facebook" />
-                <span className="fab fa-twitter about-social-icon me-3" aria-label="Twitter" />
-                <span className="fab fa-linkedin-in about-social-icon" aria-label="LinkedIn" />
+            {/* RIGHT: CONTENT */}
+            <div className="col-lg-7 col-xl-6 offset-xl-1 mt-4 mt-lg-0 d-flex">
+              <div className="d-flex flex-column justify-content-center h-100 w-100">
+                <h4 className="mb-1">Md. Aminur Rahman Mandal</h4>
+
+                <p className="text-thm fz15 mb25">
+                  <b>Founder Chairman & Managing Director</b>
+                </p>
+
+                <p className="text mb25">
+                  Aminur Rahman Mandal completed his (BBA) and (MBA) in
+                  Accounting from Islamic University, Kushtia, in 2007. He began
+                  his professional career in the banking sector and served at
+                  several leading commercial banks in Bangladesh, including
+                  United Commercial Bank, EXIM Bank, Social Islami Bank, First
+                  Security Islami Bank, and Dutch-Bangla Bank Limited. He worked
+                  as a Management Trainee and Probationary Officer during the
+                  early stage of his career (2009–2011). He later continued his
+                  career at Dutch-Bangla Bank Limited. In 2022, he resigned from
+                  Dutch-Bangla Bank Limited while serving as a Deputy Manager at
+                  a renowned branch. During his professional career, he founded
+                  Bankers Housing Society in 2018 with a clear vision to deliver
+                  secure, sustainable, and value-driven residential projects for
+                  bankers, their relatives, and their family friends. Under his
+                  leadership, the company has expanded its operational scope by
+                  incorporating associated ventures such as Bankers Housing
+                  Construction and Bankers Housing Development, and has also
+                  formed a platform where all can join to solve their
+                  accommodation problems in Dhaka city.
+                  {/* Aminur Rahman Mandal completed his BBA in 2007 and MBA in 2009 in Accounting from Islamic University, Kushtia.
+        He began his professional career in the banking sector and served at several leading commercial banks in Bangladesh,
+        including United Commercial Bank, EXIM Bank, Social Islami Bank, First Security Islami Bank, and Dutch-Bangla Bank Limited.
+        He worked as a Management Trainee and Probationary Officer during the early stage of his career (2009–2011).
+        He later continued his career at Dutch-Bangla Bank Limited. In 2022, he resigned while serving as a Deputy Manager. */}
+                </p>
+                <p className="text mb25">
+                  With a forward-looking vision, Aminur Rahman Mandal is
+                  committed to establishing Bankers Housing Society, Bankers
+                  Housing Construction, and Bankers Housing Development as
+                  trusted and dependable names in the real estate sector,
+                  contributing to sustainable urban development and enhancing
+                  investor confidence for generations.
+                </p>
+
+                <h5 className="mb-3">Our motto is "We Build Trust"</h5>
+
+                <ul className="mb40 ps-3 about-values-list text">
+                  <li>
+                    <strong>Excellence:</strong> Every project is crafted with
+                    world-class quality and attention to detail.
+                  </li>
+                  <li>
+                    <strong>Trust & Transparency:</strong> We believe in honesty
+                    and long-term relationships.
+                  </li>
+                  <li>
+                    <strong>Innovation:</strong> We combine creativity and
+                    technology for future-ready solutions.
+                  </li>
+                </ul>
+
+                <div className="about-values-social d-flex align-items-center">
+                  <span
+                    className="fab fa-facebook-f about-social-icon me-3"
+                    aria-label="Facebook"
+                  />
+                  <span
+                    className="fab fa-twitter about-social-icon me-3"
+                    aria-label="Twitter"
+                  />
+                  <span
+                    className="fab fa-linkedin-in about-social-icon"
+                    aria-label="LinkedIn"
+                  />
+                </div>
               </div>
             </div>
           </div>
 
           {/* CFO Section (Text Left, Image Right Desktop | Image Top, Text Bottom Mobile) */}
-          <div className="row mt80 align-items-center" data-aos="fade-up" data-aos-delay="300">
+          <div
+            className="row mt80 align-items-center"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
             <div className="col-lg-7 col-xl-6 order-2 order-lg-1 mt-4 mt-lg-0">
               <h4 className="mb-1">Abdullah Al Galib</h4>
-              <p className="text-thm fz15 mb25">CFO – Bankers Housing Society</p>
-              
+              <p className="text-thm fz15 mb25">
+                <b>CFO – Bankers Housing Society</b>
+              </p>
+
               <p className="text mb25">
-                Abdullah Al Galib completed his BBA in 2022 and MBA in 2023 in Banking and Insurance from University of Chittagong. 
-                He is currently serving as the Chief Financial Officer (CFO) at Bankers Housing Society, where he manages financial planning and strategic growth initiatives.
+                Abdullah Al Galib completed his BBA in 2022 and MBA in 2023 in
+                Banking and Insurance from University of Chittagong. He is
+                currently serving as the Chief Financial Officer (CFO) at
+                Bankers Housing Society, where he manages financial planning and
+                strategic growth initiatives.
               </p>
 
               <div className="p-4 bgc-f7 bdrs12 mb40 mt30">
                 <h5 className="mb-2">Statement:</h5>
                 <p className="text mb-0 fst-italic">
-                  “We strive to be a trusted and secure housing solution and your reliable partner for a safe and trusted home.”
+                  “We strive to be a trusted and secure housing solution and
+                  your reliable partner for a safe and trusted home.”
                 </p>
               </div>
 
               <div className="about-values-social d-flex align-items-center">
-                <span className="fab fa-facebook-f about-social-icon me-3" aria-label="Facebook" />
-                <span className="fab fa-twitter about-social-icon me-3" aria-label="Twitter" />
-                <span className="fab fa-linkedin-in about-social-icon" aria-label="LinkedIn" />
+                <span
+                  className="fab fa-facebook-f about-social-icon me-3"
+                  aria-label="Facebook"
+                />
+                <span
+                  className="fab fa-twitter about-social-icon me-3"
+                  aria-label="Twitter"
+                />
+                <span
+                  className="fab fa-linkedin-in about-social-icon"
+                  aria-label="LinkedIn"
+                />
               </div>
             </div>
-            
+
             <div className="col-lg-5 col-xl-5 offset-xl-1 order-1 order-lg-2">
               <div className="about-img-box position-relative">
                 <Image
@@ -205,7 +275,7 @@ const Home_V1 = async () => {
           </div>
         </div>
       </section>
-      
+
       <section className="pb-20">
         <div className="how-we-help position-relative mx-auto bgc-thm-light maxw1600 pt120 pt60-md pb90 pb30-md bdrs12 mx20-lg">
           <div className="container">

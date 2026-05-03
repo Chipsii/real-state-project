@@ -42,6 +42,11 @@ const nextConfig = {
         hostname: process.env.BACKEND_HOSTNAME || "your-backend.vercel.app",
         pathname: "/uploads/**",
       },
+      {
+        protocol: "https",
+        hostname: "images.bankershousingsociety.com.bd" || "your-backend.vercel.app",
+        pathname: "/uploads/**",
+      },
     ],
   },
 };

@@ -99,6 +99,7 @@ const AgentFormClient = ({ id }) => {
       const uploadedData = await uploadImage(file);
       
       // Your backend returns { type, url, originalName, mimetype }
+      console.log(uploadedData)
       if (uploadedData && uploadedData.url) {
         setFormData((prev) => ({ ...prev, photoUrl: uploadedData.url }));
       } else {

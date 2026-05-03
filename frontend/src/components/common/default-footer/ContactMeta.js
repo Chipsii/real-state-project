@@ -9,8 +9,8 @@ const ContactMeta = () => {
     },
     {
       title: "Need Live Support?",
-      mail: "hi@homez.com",
-      mailLink: "mailto:hi@homez.com", // Changed mailLink to direct email address
+      mail: "contact@bankershousingsociety.com.bd",
+      mailLink: "mailto:bankershousingsociety.com.bd", // Changed mailLink to direct email address
     },
   ];
 

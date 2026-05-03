@@ -6,7 +6,7 @@ import Form from "@/components/pages/contact/Form";
 import Office from "@/components/pages/contact/Office";
 
 export const metadata = {
-  title: "Contact  || Homez - Real Estate NextJS Template",
+  title: "Contact || Bankers Housing",
 };
 
 const Contact = () => {
@@ -22,13 +22,19 @@ const Contact = () => {
 
       {/* Our Contact With Map */}
       <section className="p-0">
-        <iframe
+        {/* <iframe
           className="home8-map contact-page"
           loading="lazy"
-          src="https://maps.google.com/maps?q=London%20Eye%2C%20London%2C%20United%20Kingdom&t=m&z=14&output=embed&iwloc=near"
+          src="https://maps.google.com/maps?q=Banker's+Housing+society+Office&t=m&z=14&output=embed&iwloc=near"
           title="London Eye, London, United Kingdom"
           aria-label="London Eye, London, United Kingdom"
-        />
+        /> */}
+        <iframe
+
+          className="home8-map contact-page"
+        title="Bankers Housing, Bangladesh"
+          aria-label="Bankers Housing, Bangladesh"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3649.4925742793957!2d90.38226999999999!3d23.836636499999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c7002d2fdc2b%3A0xc2961b95a9dbbf63!2sBanker&#39;s%20Housing%20society%20Office!5e0!3m2!1sen!2sbd!4v1777819601587!5m2!1sen!2sbd" loading="lazy" ></iframe>
       </section>
       {/* End Our Contact With Map */}
 

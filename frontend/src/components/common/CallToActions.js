@@ -44,11 +44,17 @@ const CallToActions = () => {
                   className="ud-btn btn-dark mr30 mr0-xs"
                 >
                   <span className="fab fa-whatsapp text-white vam pe-2" />
-                  +880 13137 14079
+                  01312-112222
                 </Link>
-                <Link href="/contact" className="ud-btn btn-dark">
-                  <span className="flaticon-call vam pe-2" />
-                  +880 13137 14080
+                <Link href="/contact"
+                  className="ud-btn btn-dark mr30 mr0-xs">
+                  <span className="fab fa-whatsapp text-white vam  pe-2" />
+                  01312-442222
+                </Link>
+                <Link href="/contact" 
+                  className="ud-btn btn-dark mr30 mr0-xs">
+                  <span className="fab fa-whatsapp text-white vam  pe-2" />
+                  01712-739000
                 </Link>
               </div>
             </div>

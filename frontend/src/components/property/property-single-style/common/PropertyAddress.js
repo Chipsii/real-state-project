@@ -1,12 +1,11 @@
 "use client";
 
 import React, { useMemo } from "react";
-import { GoogleMap, useLoadScript, MarkerF } from "@react-google-maps/api";
+import { GoogleMap, MarkerF, useJsApiLoader } from "@react-google-maps/api";
 
 const isGood = (v) => Number.isFinite(Number(v));
 
 function getLatLng(property) {
-  // prefer geo (new backend normalization sets geo)
   const coords = Array.isArray(property?.geo?.coordinates)
     ? property.geo.coordinates
     : null;
@@ -17,7 +16,6 @@ function getLatLng(property) {
     if (!(lat === 0 && lng === 0)) return { lat, lng };
   }
 
-  // fallback if lat/lng are still present in response
   if (isGood(property?.lat) && isGood(property?.lng)) {
     const lat = Number(property.lat);
     const lng = Number(property.lng);
@@ -29,14 +27,14 @@ function getLatLng(property) {
 
 const mapContainerStyle = {
   width: "100%",
-  height: 260,
-  borderRadius: 12,
+  height: 280, // slightly taller = better UX
+  borderRadius: 14,
   overflow: "hidden",
 };
 
 const mapOptions = {
   disableDefaultUI: true,
-  zoomControl: false,
+  zoomControl: true, // enable zoom for better UX
   clickableIcons: false,
   gestureHandling: "greedy",
   styles: [
@@ -44,31 +42,25 @@ const mapOptions = {
     { featureType: "transit", stylers: [{ visibility: "off" }] },
     { featureType: "road", elementType: "geometry", stylers: [{ lightness: 35 }] },
     { featureType: "water", elementType: "geometry", stylers: [{ lightness: 10 }] },
-    {
-      featureType: "administrative",
-      elementType: "labels.text.fill",
-      stylers: [{ lightness: 20 }],
-    },
   ],
 };
 
 const Field = ({ label, value }) => (
   <div className="d-flex justify-content-between gap-3">
     <div className="fw600 ff-heading dark-color">{label}</div>
-    <div className="text">{value || "—"}</div>
+    <div className="text text-end">{value || "—"}</div>
   </div>
 );
 
 const PropertyAddress = ({ property }) => {
   const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || "";
 
-  const { isLoaded } = useLoadScript({
+  const { isLoaded, loadError } = useJsApiLoader({
     googleMapsApiKey: apiKey,
   });
 
   const latLng = useMemo(() => getLatLng(property), [property]);
 
-  // ✅ updated schema fields
   const addressLine = property?.locationText || "";
   const city = property?.city || "";
   const thana = property?.thana || "";
@@ -77,7 +69,9 @@ const PropertyAddress = ({ property }) => {
 
   const mapsQuery = latLng
     ? `${latLng.lat},${latLng.lng}`
-    : [addressLine, neighborhood, thana, city, zip].filter(Boolean).join(", ");
+    : [addressLine, neighborhood, thana, city, zip]
+        .filter(Boolean)
+        .join(", ");
 
   const openMapsUrl = mapsQuery
     ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(mapsQuery)}`
@@ -88,7 +82,7 @@ const PropertyAddress = ({ property }) => {
 
   return (
     <>
-      {/* Top info grid */}
+      {/* INFO GRID */}
       <div className="col-12">
         <div className="row g-3">
           <div className="col-md-6">
@@ -103,127 +97,56 @@ const PropertyAddress = ({ property }) => {
             <div className="d-grid gap-2">
               <Field label="Neighborhood" value={neighborhood} />
               <Field label="Zip" value={zip} />
-              <Field label="Coordinates" value={latLng ? `${center.lat}, ${center.lng}` : ""} />
+              <Field
+                label="Coordinates"
+                value={latLng ? `${center.lat}, ${center.lng}` : ""}
+              />
             </div>
           </div>
         </div>
       </div>
 
-      {/* Map card */}
+      {/* MAP CARD */}
       <div className="col-12">
         <div
           style={{
-            marginTop: 22,
-            background: "#dcebf7",
-            borderRadius: 12,
-            padding: 14,
+            marginTop: 24,
+            background: "#eef5fb",
+            borderRadius: 16,
+            padding: 16,
           }}
         >
           <div style={{ position: "relative" }}>
+            {/* Open Maps Button */}
             <a
               href={openMapsUrl}
               target="_blank"
               rel="noreferrer"
               style={{
                 position: "absolute",
-                right: 14,
-                top: 14,
+                right: 12,
+                top: 12,
                 zIndex: 5,
                 background: "#fff",
-                color: "#0f172a",
-                textDecoration: "none",
                 fontWeight: 600,
                 fontSize: 14,
-                padding: "10px 14px",
-                borderRadius: 12,
-                boxShadow: "0 10px 25px rgba(0,0,0,0.12)",
-                display: "inline-flex",
-                alignItems: "center",
-                gap: 10,
+                padding: "8px 12px",
+                borderRadius: 10,
+                boxShadow: "0 8px 20px rgba(0,0,0,0.12)",
+                textDecoration: "none",
               }}
             >
-              Open on Google Maps
-              <span style={{ fontSize: 16, lineHeight: 1 }} aria-hidden>
-                ↗
-              </span>
+              Open in Maps ↗
             </a>
 
-            {/* Center marker button */}
-            <button
-              type="button"
-              aria-label="Center marker"
-              onClick={() => {
-                window.open(openMapsUrl, "_blank", "noopener,noreferrer");
-              }}
-              style={{
-                position: "absolute",
-                left: "50%",
-                top: "50%",
-                transform: "translate(-50%, -50%)",
-                zIndex: 5,
-                width: 56,
-                height: 56,
-                borderRadius: "50%",
-                border: "none",
-                background: "#0b1220",
-                boxShadow: "0 18px 35px rgba(0,0,0,0.18)",
-                display: "grid",
-                placeItems: "center",
-              }}
-            >
-              <div
-                style={{
-                  width: 28,
-                  height: 28,
-                  borderRadius: 10,
-                  border: "2px solid rgba(255,255,255,0.85)",
-                  display: "grid",
-                  placeItems: "center",
-                }}
-              >
-                <div
-                  style={{
-                    width: 8,
-                    height: 8,
-                    borderRadius: "50%",
-                    background: "rgba(255,255,255,0.85)",
-                  }}
-                />
-              </div>
-            </button>
-
-            {/* Map */}
+            {/* MAP */}
             <div style={mapContainerStyle}>
               {!apiKey ? (
-                <div
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    background: "#e9eef5",
-                    display: "grid",
-                    placeItems: "center",
-                    color: "#334155",
-                    fontSize: 14,
-                    borderRadius: 12,
-                  }}
-                >
-                  Missing NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
-                </div>
+                <MapPlaceholder text="Missing Google Maps API key" />
+              ) : loadError ? (
+                <MapPlaceholder text="Failed to load map" />
               ) : !isLoaded ? (
-                <div
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    background: "#e9eef5",
-                    display: "grid",
-                    placeItems: "center",
-                    color: "#334155",
-                    fontSize: 14,
-                    borderRadius: 12,
-                  }}
-                >
-                  Loading map…
-                </div>
+                <MapPlaceholder text="Loading map…" />
               ) : (
                 <GoogleMap
                   mapContainerStyle={{ width: "100%", height: "100%" }}
@@ -231,8 +154,7 @@ const PropertyAddress = ({ property }) => {
                   zoom={latLng ? 15 : 12}
                   options={mapOptions}
                 >
-                  {/* ✅ actual marker so the location is obvious */}
-                  {latLng ? <MarkerF position={latLng} /> : null}
+                  {latLng && <MarkerF position={latLng} />}
                 </GoogleMap>
               )}
             </div>
@@ -242,5 +164,23 @@ const PropertyAddress = ({ property }) => {
     </>
   );
 };
+
+/* 🔹 Small reusable placeholder */
+const MapPlaceholder = ({ text }) => (
+  <div
+    style={{
+      width: "100%",
+      height: "100%",
+      background: "#e9eef5",
+      display: "grid",
+      placeItems: "center",
+      color: "#334155",
+      fontSize: 14,
+      borderRadius: 14,
+    }}
+  >
+    {text}
+  </div>
+);
 
 export default PropertyAddress;

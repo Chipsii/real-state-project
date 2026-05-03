@@ -21,6 +21,7 @@ export async function uploadImage(file) {
   });
 
   const payload = res.data;
+  console.log(payload)
   return payload?.data?.[0];
 }
 

@@ -10,3 +10,21 @@
     letter-spacing: 0%;
 
 }
+
+/* Hide Google Translate UI */
+#google_translate_element,
+.skiptranslate,
+.goog-te-banner-frame,
+.goog-te-balloon-frame {
+  display: none !important;
+}
+
+/* Remove body offset added by Google */
+body {
+  top: 0px !important;
+}
+
+/* Prevent extra spacing from html tag */
+html {
+  margin-top: 0px !important;
+}
